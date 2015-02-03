@@ -4,6 +4,9 @@ public class Soccer
 	public static void makeGoal()
 		{
 		int [][] goal = {{1,2,3},{4,5,6},{7,8,9}};
+		}
+	public static void printGoal()
+		{
 		System.out.println("          GOAL");
 		System.out.println("-------------------------");
 		System.out.println("| " + goal[0][0] + "         " + goal[0][1] + "         " + goal [0][2] + " |");
