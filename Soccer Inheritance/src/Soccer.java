@@ -1,10 +1,7 @@
 
 public class Soccer
 	{
-	public static void makeGoal()
-		{
-		int [][] goal = {{1,2,3},{4,5,6},{7,8,9}};
-		}
+	static int [][] goal = {{1,2,3},{4,5,6},{7,8,9}};
 	public static void printGoal()
 		{
 		System.out.println("          GOAL");
