@@ -7,6 +7,7 @@ public class fieldPlayer
 	private static String name;
 	protected static int playerShot;
 	protected static int whichPlayer;
+	protected static int compShot;
 	public fieldPlayer(int s)
 		{
         shooting = s;
@@ -24,5 +25,20 @@ public class fieldPlayer
 	public static void pickComp()
 		{
 		whichPlayer = (int)(Math.random()*3);
+		if (whichPlayer == 0)
+			{
+			System.out.println("You will be playing against the defender.");
+			compShot = defender.dWhere;
+			}
+		else if (whichPlayer == 1)
+			{
+			System.out.println("You will be playing against the midfielder.");
+			compShot = midfielder.mWhere;
+			}
+		else 
+			{
+			System.out.println("You will be playing against the forward.");
+			compShot = forward.fWhere;
+			}
 		}
 	}
