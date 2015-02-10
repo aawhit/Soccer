@@ -12,18 +12,27 @@ public class fieldPlayer
 		{
         shooting = s;
 		}
+	public int getShooting()
+		{
+		return shooting;
+		}
+	public void setShooting(int shooting)
+		{
+		this.shooting = shooting;
+		}
+	
 	public static void character()
 		{
-//		System.out.println("What is your name?");
-//		Scanner userInput = new Scanner(System.in);
-//		name = userInput.nextLine();
-//		System.out.println("Great, " + name + " on a scale from 1-100, how good are you at shooting for soccer?");
+		System.out.println("What is your name?");
+		Scanner userInput = new Scanner(System.in);
+		name = userInput.nextLine();
 		System.out.println("Where would you like to shoot?");
 		Scanner userInput1 = new Scanner(System.in);
 		playerShot = userInput1.nextInt();
 		}
 	public static void pickComp()
 		{
+		System.out.println("I will choose your opponent now.");
 		whichPlayer = (int)(Math.random()*3);
 		if (whichPlayer == 0)
 			{

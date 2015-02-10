@@ -6,6 +6,7 @@ public class goalie extends Soccer
     public goalie(int gh)
     	{
     	gh = goodHands;
+    	goodHands = (int)(Math.random()*40)+61;
     	}
     
     public static void goalieSide()

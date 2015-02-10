@@ -14,6 +14,26 @@ public class Soccer
 	    System.out.println("-------------------------");
 		}
 	
+	public static void onGoal()
+		{
+		
+		if (fieldPlayer.whichPlayer == 0)
+			{
+			if (defender.defender.getShooting() > 1 )
+				{
+				
+				}
+			}
+		else if (fieldPlayer.whichPlayer == 1)
+			{
+			
+			}
+		else 
+			{
+			
+			}
+		}
+	
 	public static void goalOrBlock(int ps, int cs)
 		{
 		switch (goalie.side)

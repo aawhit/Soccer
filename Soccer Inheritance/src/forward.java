@@ -7,6 +7,7 @@ public class forward extends fieldPlayer
 	public forward(int s)
 		{
 		super(s);
+		s = (int)(Math.random()*20)+71;
 		}
 	
 	public static void forwardShot()

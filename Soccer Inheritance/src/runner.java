@@ -6,8 +6,9 @@ public class runner
 		{
 		Soccer.printGoal();
 		fieldPlayer.character();
+		fieldPlayer.pickComp();
 		goalie.goalieSide();
-		Soccer.goalOrBlock();
+		Soccer.goalOrBlock(fieldPlayer.playerShot,fieldPlayer.compShot);
 		}
 
 	}

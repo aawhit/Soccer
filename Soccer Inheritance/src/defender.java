@@ -4,10 +4,10 @@ public class defender extends fieldPlayer
 	protected static int dShot;
 	protected static int dWhere;
 
-	public defender(int s, int dw)
+	public defender(int s)
 		{
 		super(s);
-		
+		s = (int)(Math.random()*20)+51;
 		}
 	
 	public static void defenderShot()
