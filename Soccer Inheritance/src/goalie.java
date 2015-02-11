@@ -9,7 +9,17 @@ public class goalie extends Soccer
     	goodHands = (int)(Math.random()*40)+61;
     	}
     
-    public static void goalieSide()
+    public int getGoodHands() 
+    	{
+		return goodHands;
+		}
+
+	public void setGoodHands(int goodHands) 
+		{
+		this.goodHands = goodHands;
+		}
+
+	public static void goalieSide()
      {
      switch (side)
      	{

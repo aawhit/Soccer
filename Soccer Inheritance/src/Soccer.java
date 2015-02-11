@@ -2,6 +2,7 @@
 public class Soccer
 	{
 	static int [][] goal = {{1,2,3},{4,5,6},{7,8,9}};
+	public static int tempInt;
 	public static void printGoal()
 		{
 		System.out.println("          GOAL");
@@ -14,38 +15,30 @@ public class Soccer
 	    System.out.println("-------------------------");
 		}
 	
-	public static void onGoal()
-		{
-		
-		if (fieldPlayer.whichPlayer == 0)
-			{
-			if (defender.defender.getShooting() > 1 )
-				{
-				
-				}
-			}
-		else if (fieldPlayer.whichPlayer == 1)
-			{
-			
-			}
-		else 
-			{
-			
-			}
-		}
 	
 	public static void goalOrBlock(int ps, int cs)
 		{
 		switch (goalie.side)
 		{
 			case 0:
-				if (ps == goalie.goaliePosition)
+				if (defender.defender.getShooting() < tempInt)
+					{
+					System.out.println("Your shot missed the goal!");
+					}
+				else if (ps == goalie.goaliePosition)
 					{
 					System.out.println("Your shot was blocked!");
 					}
 				else if ((ps == goal[0][0] || ps==goal[2][0]) && goalie.goaliePosition == goal[1][0])
 					{
-					System.out.println("Shot may have been blocked");
+					if (defender.defender.getShooting() < goalie.goalie.getGoodHands())
+						{
+						System.out.println("Your shot was blocked.");
+						}
+					else 
+						{
+						System.out.println("You scored!");
+						}
 					}
 				else 
 					{
