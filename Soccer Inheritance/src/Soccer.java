@@ -9,6 +9,8 @@ public class Soccer
 	protected static int playerShooting;
 	protected static int compShooting;
 	protected static int playerShot;
+	protected static int yourGoals=0;
+	protected static int cGoals=0;
 	public static void printGoal()
 		{
 		System.out.println("          GOAL");
@@ -46,11 +48,13 @@ public class Soccer
 						}
 					else 							{
 						System.out.println("You scored!");
+						yourGoals++;
 						}
 					}
 				else 
 				{
 				System.out.println("You scored!!");
+				yourGoals++;
 				}
 				break;
 			case 1:
@@ -71,11 +75,13 @@ public class Soccer
 					else 							
 						{
 						System.out.println("You scored!");
+						yourGoals++;
 						}
 					}
 				else 
 					{
 					System.out.println("You scored!!");
+					yourGoals++;
 					}
 				break;
 			case 2:
@@ -83,7 +89,7 @@ public class Soccer
 					{
 					System.out.println("Your shot missed.");
 					}
-				if (ps == goalie.goaliePosition)
+				else if (ps == goalie.goaliePosition)
 					{
 					System.out.println("Your shot was blocked!");
 					}
@@ -96,11 +102,13 @@ public class Soccer
 					else 							
 						{
 						System.out.println("You scored!");
+						yourGoals++;
 						}
 					}
 				else 
 					{
 					System.out.println("You scored!!");
+					yourGoals++;
 					}
 			}
 
@@ -123,12 +131,14 @@ public class Soccer
 					}
 				else 							
 					{
-					System.out.println("You scored!");
+					System.out.println("Your opponent scored.");
+					cGoals++;
 					}
 				}
 			else 
 				{
 				System.out.println("Your opponent scored.");
+				cGoals++;
 				}
 			break;
 		case 1:
@@ -144,16 +154,18 @@ public class Soccer
 				{
 				if (s.getShooting() < g.getGoodHands())
 					{
-					System.out.println("Your shot was blocked.");
+					System.out.println("Your opponent's shot was blocked.");
 					}
 				else 							
 					{
-					System.out.println("You scored!");
+					System.out.println("Your opponent scored!");
+					cGoals++;
 					}
 				}
 			else 
 				{
 				System.out.println("Your opponent scored");
+				cGoals++;
 				}
 			break;
 		case 2:
@@ -169,25 +181,45 @@ public class Soccer
 				{
 				if (s.getShooting() < g.getGoodHands())
 					{
-					System.out.println("Your shot was blocked.");
+					System.out.println("Your opponent's shot was blocked.");
+					cGoals++;
 					}
 				else 							
 					{
-					System.out.println("You scored!");
+					System.out.println("Your opponent scored!");
+					cGoals++;
 					}
 				}
 			else 
 				{
 				System.out.println("Your opponent scored.");
+				cGoals++;
 				}
 		}
 		}
 	public static void runAgain()
 		{
-		System.out.println(fieldPlayer.name + " where would you like to shoot?");
-		Scanner userInput1 = new Scanner(System.in);
-		playerShot = userInput1.nextInt();
-		goalie.goalieSide();
-		Soccer.goalOrBlock(Soccer.playerShot,fieldPlayer.compShot);
+		for (int i=0;i<5;i++)
+			{
+			System.out.println(fieldPlayer.name + " where would you like to shoot?");
+			Scanner userInput1 = new Scanner(System.in);
+			playerShot = userInput1.nextInt();
+			goalie.goalieSide();
+			Soccer.goalOrBlock(Soccer.playerShot,fieldPlayer.compShot);
+			System.out.println("Your goals:" + yourGoals);
+			System.out.println("Your opponent's goals:" + cGoals);
+			}
+		if (yourGoals > cGoals)
+			{
+			System.out.println("You won!");
+			}
+		else if (yourGoals < cGoals)
+			{
+			System.out.println("You lost.");
+			}
+		else
+			{
+			System.out.println("You tied... That's boring.");
+			}
 		}
 	}
