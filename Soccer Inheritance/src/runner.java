@@ -8,7 +8,7 @@ public class runner
 		fieldPlayer.character();
 		fieldPlayer.pickComp();
 		goalie.goalieSide();
-		Soccer.goalOrBlock(fieldPlayer.playerShot,fieldPlayer.compShot);
+		Soccer.goalOrBlock(Soccer.playerShot,fieldPlayer.compShot);
 		}
 
 	}
