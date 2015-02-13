@@ -24,15 +24,21 @@ public class Soccer
 		}
 
 
-	public static void goalOrBlock(int ps, int cs)
+	public static void goalOrBlock(int ps, int cs) throws InterruptedException
 		{	
 		tempInt = (int)(Math.random()*40)+61;
 		playerShooting = (int)(Math.random()*30)+71;
 		compShooting = (int)(Math.random()*30)+71;
+		goalie.goalieSide();
+		Thread.sleep(2500);
 		switch (goalie.side)
 			{
 			case 0:
-				if (playerShooting < tempInt)
+				if (playerShot > 9 || playerShot<1)
+					{
+					System.out.println("Your shot missed the goal(You selected a number outside the goal.)");
+					}
+				else if (playerShooting < tempInt)
 					{
 					System.out.println("Your shot missed the goal!");
 					}
@@ -58,7 +64,11 @@ public class Soccer
 				}
 				break;
 			case 1:
-				if (playerShooting < tempInt)
+				if (playerShot > 9 || playerShot<1)
+					{
+					System.out.println("Your shot missed the goal(You selected a number outside the goal.)");
+					}
+				else if (playerShooting < tempInt)
 					{
 					System.out.println("Your shot missed the goal.");
 					}
@@ -85,7 +95,11 @@ public class Soccer
 					}
 				break;
 			case 2:
-				if (playerShooting< tempInt)
+				if (playerShot > 9 || playerShot<1)
+					{
+					System.out.println("Your shot missed the goal(You selected a number outside the goal.)");
+					}
+				else if (playerShooting< tempInt)
 					{
 					System.out.println("Your shot missed.");
 					}
@@ -112,6 +126,8 @@ public class Soccer
 					}
 			}
 
+		goalie.goalieSide();
+		Thread.sleep(2500);
 		switch (goalie.side)
 		{
 		case 0:
@@ -197,14 +213,13 @@ public class Soccer
 				}
 		}
 		}
-	public static void runAgain()
+	public static void runAgain() throws InterruptedException
 		{
 		for (int i=0;i<5;i++)
 			{
 			System.out.println(fieldPlayer.name + " where would you like to shoot?");
 			Scanner userInput1 = new Scanner(System.in);
 			playerShot = userInput1.nextInt();
-			goalie.goalieSide();
 			Soccer.goalOrBlock(Soccer.playerShot,fieldPlayer.compShot);
 			System.out.println("Your goals:" + yourGoals);
 			System.out.println("Your opponent's goals:" + cGoals);

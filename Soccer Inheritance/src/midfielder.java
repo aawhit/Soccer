@@ -7,7 +7,7 @@ public class midfielder extends fieldPlayer
 	public midfielder(int s)
 		{
 		super(s);
-		s = (int)(Math.random()*20)+70;
+		s = (int)(Math.random()*20)+61;
 		}
 	
 	public static void midfieldShot()
